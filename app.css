@@ -611,9 +611,29 @@ line-height: 18px;
 color: #303030;
 letter-spacing: 0em;
 }
+
+/* Progress bar */
+.progress-bar {
+    width: 72px;
+height: 4px;
+border-radius: 28px;
+margin: 6px 0 0 10px;
+ border: 1px solid #E3E3E3;
+
+   
+  }
+  /* Progress */
+  .progress {
+    width: 0;
+    height: 4px;
+    transition: width 0.3s ease-in-out;
+    background-color:  #1A1A1A;
+    border-radius: 28px;
+  }
 /* Number completed and Progress bar container */
 .number-progress-container{
     padding: 5px 0;
+    display: flex;
 }
 /* Number completed */
 .number-progress-container p {
@@ -678,8 +698,16 @@ background-color: #F1F1F1;
     flex-direction: row;
 }
 /* Setup content container */
-.content-container{
+ .content-container-two, .content-container-three, .content-container-four, .content-container-five{
     background-color: #FFFFFF;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+}
+.content-container-one{
+    background-color: #f3f3f3;
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -695,6 +723,10 @@ background-color: #F1F1F1;
     display: inline;
 
 }
+.flex-row-container{
+    display: flex;
+    flex-direction: row;
+}
   
   /* Checkbox container */
   .checkbox-custom {
@@ -704,15 +736,15 @@ background-color: #F1F1F1;
     padding: 5px;
 }
  /* Checkbox icon */
-  #checkbox{
+  .checkbox-one, .checkbox-two, .checkbox-three, .checkbox-four, .checkbox-five{
     display: none;
 }
 /* Circle icon */
-#circle{
+.circle-one, .circle-two, .circle-three, .circle-four, .circle-five{
     display: none;
 }
 /* Dotted icon */
-#dotted{
+.dotted-one, .dotted-two, .dotted-three, .dotted-four, .dotted-five{
     display: block;
 }
 
@@ -720,12 +752,15 @@ background-color: #F1F1F1;
 
 
 /* Extended content for the setup content*/
-.extended-content{
+ .extended-content-two, .extended-content-three, .extended-content-four, .extended-content-five{
     display: none;
     padding: 5px 10px 5px 20px;
 }
 
-
+.extended-content-one{
+    display: block;
+    padding: 5px 10px 5px 20px;
+}
 /* Set up Content heading */
 .content-heading{
     display: inline;
@@ -889,7 +924,7 @@ padding: 6px 12px 6px 12px;
                  border-radius: 18px;
          }
     
-        .content-container{
+        .content-container-one, .content-container-two, .content-container-three, .content-container-four, .content-container-five{
             position: relative;
             width: 790px;
             height: 100%;

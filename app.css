@@ -6,6 +6,11 @@
     -webkit-text-size-adjust: 100%;
     }
 
+    body{
+        background-color: #F1F1F1;
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        height: 100vh;
+    }
    
     /* Header */
     .header{
@@ -22,33 +27,56 @@
         width: 100%;
     }
     /* Shopify Home Logo */
-     .shopify-logo {
-        width: 105px;
-        height: 30px;
+    .shopify-mobile-logo-container{
+display: block;
+padding-right: 10px;
+    }
+    .shopify-mobile-logo-container a {
+        text-decoration: none;
     }
 
-    /* Search bar */
+    .shopify-desktop-logo-container{
+        display: none;
+    }
+
+    /* Search Input Container*/
     .search-bar-container{
         display: flex;
         flex-direction: row;
     }
   /* Search input */
     .search-input{
-        width: 480px;
+        width: 220px;
         height: 32px;
         border-radius: 8px;
-        padding: 8px;
+        padding: 8px 8px 8px 30px;
 border: 1px solid #616161;
 background-color: #303030;
+color: #B5B5B5;
+    }
+    /* Search input hover */
+    .search-input:hover {
+        outline: 1px solid 
+        #E1E1E1;
+        
+    }
+    /* Search input focused */
+    .search-input:focus{
+        outline: 2px solid #FFFFFF;
+    }
+    /* Search input pressed */
+    .search-input:active{
+        outline: 2px solid #FFFFFF;
+      
     }
     /* Search input placeholder */
     .search-input::placeholder{
-        padding-left: 20px;
-        color: #B5B5B5;
+     color: #B5B5B5;
         font-weight: 500;
         font-size: 13px;
         font-family: 'Inter', sans-serif;
         line-height: 18px;
+        letter-spacing: 0em;
     }
     /* Search icon */
     .search-icon-container{
@@ -56,48 +84,882 @@ background-color: #303030;
         width: 20px;
         padding: 3px 4px;
         z-index: 100;
-        transform: translate(-475px, 5px);
+        transform: translate(-215px, 5px);
         display: flex;
         justify-content: center;
         align-items: center;
     }
     
-/* Notification and Admin Container*/
-   .notification-admin-container{
+/* Notification and User Container*/
+   .notification-user-container{
     display: flex;
 flex-direction: row;
 align-items: center;
    }
-/* Notification icon container*/
-   .notification-icon-container{
-    height: 28px;
-    width: 28px;
-    border-radius: 6px;
-    display: flex;
+
+/* Notification button container*/
+   .notification-button-container{
+    padding: 3px;
+   display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #303030
-    ;
+ position: relative;
    }
-   /* Admin Container */
-   .admin-container{
+   /* Notification bell */
+   .notification-button{
+cursor: pointer;
+background: none;
+border: none;
+height: 28px;
+width: 28px;
+border-radius: 6px; 
+background-color: #303030;     
+   }
+      .notification-button:hover {
+       background-color: #616161;
+
+      }
+      .notification-button:active{
+       background-color: #656266;
+      }
+.notification-button:focus{
+    outline: none;
+    box-shadow: 0px 0px 0px 3px rgba(0, 91, 211, 1), 0px 0px 0px 1px rgba(0, 0, 0, 1);
+   
+}
+/* Alert container */
+  .alert-container{
+    width: 358px;
+    height: auto;
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid  #DBDBDB;
+    background: #FFF;
+box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+position: absolute;
+top: 55px;
+right: -38px;
+display: none;
+  }
+  /* Alert heading Content */
+  .alert-heading-content{
 display: flex;
-flex-direction: row;
-align-items: center;
-width: 142px;
-height: 32px;
-border-radius: 8px;
-margin-left: 8px;
-padding: 
-2px 2px 2px 8px;
-background-color: 
+justify-content: space-between;
+  }
+  /* Alert Heading */
+  .alert-heading{
+font-size: 14px;
+font-weight: 600;
+line-height: 20px;
+letter-spacing: 0em;
+color: 
 #303030;
+
+  }
+  /* Alert Main content */
+  .alert-main-content{
+    width: 100%;
+padding: 16px;
+background-color: #F1F1F1;
+margin: 10px 0 0 0;
+display: flex;
+justify-content: center;
+align-items: center;
+  }
+  /* Alert main content paragraph */
+  .alert-main-content p{
+    color: #303030;
+font-size: 13px;
+font-weight: 600;
+line-height: 18px;
+letter-spacing: 0em;
+text-align: center;
+
+  }
+  .filter-button, .circle-tick-button{
+    background: none;
+    cursor: pointer;
+    border: none;
+    padding: none;
+  }
+  .filter-button:focus , .circle-tick-button:focus{
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid #005BD3
+  }
+   /* User name */
+   .user-name{
+    display: none;
    }
-   /* Admin name */
-   .admin-name{
-    color: #E3E3E3;
+  
+   /* User Initials */
+   .user-logo-initials{
+    color: rgba(0, 0, 0, 0.4);
     font-weight: 500;
     font-size: 12px;
     font-family: 'Inter', sans-serif;
     line-height: 15px;
+    padding:6px 5px;
+    border-radius: 6px;
+    background-color: #36FBA1;
+   
+}
+/* User container */
+.user-container{
+    position: relative;
+    
+}
+/* User contain button */
+.user-container-button{
+    border: none;
+    cursor: pointer;
+   background: none;
+   height: 26px;
+   border-radius: 7px;
+        margin-left: 8px;
+     background-color: 
+        #303030;
+        text-decoration: none;
+        display: flex;
    }
+    /* User container button hover */
+    .user-container-button:hover{
+        background-color: #616161;
+        }
+/* User container button pressed*/
+     .user-container-button:active{ background: #656266;} 
+/* User container button focused */
+     .user-container-button:focus{
+        outline: none;
+        box-shadow: 0px 0px 0px 3px rgba(0, 91, 211, 1), 0px 0px 0px 1px rgba(0, 0, 0, 1);
+     
+    }
+    /* User dropdown menu */
+    .menu {
+        list-style-type: none;
+        position: absolute;
+        top: 55px;
+        right: 30px;
+        display: none;
+        width: 320px;
+padding: 6px, 0px, 6px, 0px;
+border-radius: 14px;
+border: 1px solid rgba(219, 219, 219, 1);
+box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+background-color: #FFFFFF;
+
+      }
+      /* Display drop down menu
+      .menu-active {
+        display: block;
+      } */
+      /* Menu Items */
+      .menu-item {
+        cursor: pointer;
+        display: flex;
+      }
+      /* First Menu Item */
+      .menu-item-one{
+        position: relative;
+        cursor: pointer;
+      }
+      /* Second menu item */
+      .menu-item-two{
+        cursor: pointer;
+     }
+     .line-one{
+        width: 100%;
+        border: 0.85px solid #E1E1E1;
+        margin: 5px 0;
+     }
+      /* All store icon */
+      .all-store-icon{
+width: 30px;
+height: 30px;
+padding: 0 5px;
+
+      }
+      #all-store-button{
+        color: #303030;
+      height: 36px;
+       border-radius: 8px;
+       padding: 8px 6px;
+        text-decoration: none;
+        width: 100%;
+        text-align: left;
+        display: flex;
+align-items: center;
+      }
+      #all-store-button:focus{
+        outline: none;
+        box-shadow: 0px 0px 0px 2px rgba(0, 91, 211, 1), 0px 0px 0px 1px rgba(0, 0, 0, 1);
+    }  
+      .all-store-name{
+font-size: 13px;
+font-weight: 400;
+line-height: 18px;
+letter-spacing: 0em;
+text-align: left;
+color: #303030;
+padding: 5px 0;
+      }
+      .menu-item-name-email{
+        cursor: pointer;
+       }
+      .menu-item-button-name-email{
+        color: #303030;
+        border-radius: 8px;
+       height: 45px;
+       border-radius: 8px;
+       width: 100%;
+      padding: 6px 12px;
+       text-decoration: none;
+font-size: 13px;
+font-weight: 400;
+line-height: 18px;
+letter-spacing: 0em;
+text-align: left;
+display: flex;
+flex-direction: column;
+      }
+    .menu-item-button-name-email:focus{
+        outline: none;
+        box-shadow: 0px 0px 0px 2px rgba(0, 91, 211, 1), 0px 0px 0px 1px rgba(0, 0, 0, 1);
+    }  
+      /* Menu Item Button */
+      .menu-item-button {
+        color: #303030;
+        border-radius: 8px;
+        width: 100%;
+     height: 36px;
+       padding: 6px 12px;
+       border-radius: 8px;
+        text-decoration: none;
+ color: #303030;
+font-size: 13px;
+font-weight: 400;
+line-height: 18px;
+letter-spacing: 0em;
+text-align: left;
+
+      }
+      .menu-item-button:focus{
+        outline: none;
+        box-shadow: 0px 0px 0px 2px rgba(0, 91, 211, 1), 0px 0px 0px 1px rgba(0, 0, 0, 1);
+    }  
+      .menu-item-button-name{
+font-size: 13px;
+font-weight: 500;
+line-height: 18px;
+letter-spacing: 0em;
+text-align: left;
+color: #303030;
+border-radius: 8px;
+ cursor: pointer;
+      }
+      .menu-item-button-email{
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #616161;
+
+      }
+      /* Menu user name button */
+      #menuitem-username{
+      text-align: left;
+       width: 308px;
+     margin: 3px 5px;
+        border: none;
+        border-radius: 8px;
+        color: #303030;
+      text-decoration: none;
+      display: flex;
+      margin: 5px;
+      border-radius: 8px;
+    height: 36px;
+   background-color: #F1F1F1;
+        
+      }
+      #menuitem-username:focus{
+        outline: none;
+        box-shadow: 0px 0px 0px 2px rgba(0, 91, 211, 1), 0px 0px 0px 1px rgba(0, 0, 0, 1);
+    }  
+      /* Dropdown menu user name initials */
+      .menu-user-logo-initials{
+       font-size: 11px;
+font-weight: 500;
+line-height: 15px;
+color: rgba(0, 0, 0, 0.4);
+            padding:7px;
+    border-radius: 6px;
+    background-color: #36FBA1;
+    margin: 3px 7px;
+      }
+      /* Dropdown Menu user name */
+      .menu-user-name{
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 18px;
+        letter-spacing: 0em;
+        padding: 10px 3px;
+       }
+    
+      /* Menu check icon */
+      .menu-check{
+        position: absolute;
+        top: 0px;
+        right: 5px;
+       
+      }
+
+/* Header media queries */
+@media screen and (min-width: 700px) {
+    .shopify-mobile-logo-container{
+        display: none;
+    }
+    .shopify-desktop-logo-container{
+        display: block;
+    }
+    .shopify-desktop-logo-container a {
+        text-decoration: none;
+    }
+
+.search-input{
+    width: 350px;
+}
+.search-icon-container{
+   transform: translate(-345px, 5px);
+}
+}
+
+@media screen and (min-width: 850px){
+    .search-input{
+        width: 480px;
+    }
+    .search-icon-container{
+       transform: translate(-475px, 5px);
+    } 
+   
+       .user-name{
+        display: inline;
+         color: #E3E3E3;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0em;
+        padding: 6px 0;
+       }
+       .user-logo-initials{
+        margin-left: 8px;
+       }
+       .user-container-button{
+        border: none;
+        cursor: pointer;
+        width: 142px;
+        height: 32px;
+        border-radius: 8px;
+        margin-left: 8px;
+        padding: 
+        2px 2px 2px 8px;
+        background-color: 
+        #303030;
+       }
+          
+
+}
+
+/* Main */
+
+.main{
+   height: 56px;
+    margin-top: 56px;
+display: flex;
+justify-content: center;
+}
+/* Main Container */
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+/* Extend Trial, Select Plan and Exit Button Container */
+
+#selectPlanContent{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+background-color: #1A1A1A;
+    margin-top: 30px;
+    padding: 8px 0;
+}
+
+/* Extend Trial and Select Plan Container */
+.trial-selectplan-container{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+/* Extend Trial Container */
+.extend-trial-container{
+    padding: 5px 15px;
+}
+/* Extend trial paragraph */
+.extend-trial-container p{
+    color: #E3E3E3;
+    font-weight: 500;
+        font-size: 13px;
+        line-height: 18px;
+        letter-spacing: 0em;
+}
+/* Select Plan Container */
+.select-plan-container{
+    margin: 10px 15px;
+}
+/* Select plan */
+.select-plan{
+     border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 6px 8px;
+  background-color: 
+  #FFFFFF;
+  color: #323232;
+font-size: 12px;
+font-weight: 600;
+line-height: 15px;
+letter-spacing: 0em;
+text-decoration: none;
+}
+/* Select plan button hover */
+.select-plan:hover{
+    background-color: rgba(247, 247, 247, 1);
+}
+/* Select plan button pressed */
+.select-plan:active{
+    border: none;
+    background-color: rgba(247, 247, 247, 1);
+}
+/* Select plan button focused*/
+.select-plan:focus{
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 0px 3px rgba(0, 91, 211, 1);
+    outline: none;
+}
+/* Delete button container */
+.delete-button-container{
+padding: 0px 35px 38px 0px;
+}
+/* Delete button */
+.delete-button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1px 2px;
+    border-radius: 6px;
+    
+}
+.delete-button:focus{
+    box-shadow: 0px 0px 0px 3px rgba(0, 91, 211, 1);
+    outline: none;
+}
+
+/* Flex center container */
+.flex-center-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Setup Guide Overall Container */
+#setupGuideContent{
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    margin-top: 95px;
+    margin-bottom: 30px;
+}
+/* Setup Guide Container */
+.setup-guide-container{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+/* Setup heading Container */
+.setup-heading-container{
+    padding: 5px 0;
+}
+/* Setup Heading */
+.setup-heading-container h2{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #303030;
+    letter-spacing: 0em;
+
+}
+/* Setup Paragraph container */
+.setup-paragraph-container{
+    padding: 5px 0;
+}
+/* Setup Paragraph */
+.setup-paragraph-container p{
+font-weight: 400;
+font-size: 13px;
+line-height: 18px;
+color: #303030;
+letter-spacing: 0em;
+}
+/* Number completed and Progress bar container */
+.number-progress-container{
+    padding: 5px 0;
+}
+/* Number completed */
+.number-progress-container p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #303030;
+    letter-spacing: 0em;
+}
+/* Setup Guide and Arrow open Container */
+.sg-arrowopen-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+/* Arrow Open Setup Guide Container */
+#arrowOpenContainer{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding: 4px;
+}
+#arrowOpenContainer:hover{
+background-color: #F1F1F1;
+}
+
+/* Arrow open button */
+#toggleButton{
+   text-decoration: none;
+    padding: 0;
+  
+}
+#toggleButton:focus{
+    box-shadow: 0px 0px 0px 3px rgba(0, 91, 211, 1);
+    outline: none;
+    border-radius: 3px;
+    padding: 2px;
+
+}
+/* Arrow Icon */
+#openArrowIcon {
+  height: 20px;
+  width: 20px;
+}
+/* Close Arrow Icon */
+#closeArrowIcon{
+    display: none;
+    height: 20px;
+    width: 20px;
+}
+/* All Setup content */
+#customiseContent{
+    display: none;
+}
+
+.checkbox-heading-container{
+    display: flex;
+    flex-direction: row;
+}
+/* Setup content container */
+.content-container{
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+}
+.content-container[aria-checked="false"] .checkbox-custom svg:hover {
+    background: url('data:image/svg+xml;utf8, <svg class="circle" id="circle" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 28 28" fill="none"><path d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2" stroke="#303030" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat;
+    background-size: contain;
+}
+/* Show details for the setup content */
+.show-details{
+    display: inline;
+
+}
+  
+  /* Checkbox container */
+  .checkbox-custom {
+   cursor: pointer;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+}
+ /* Checkbox icon */
+  #checkbox{
+    display: none;
+}
+/* Circle icon */
+#circle{
+    display: none;
+}
+/* Dotted icon */
+#dotted{
+    display: block;
+}
+
+
+
+
+/* Extended content for the setup content*/
+.extended-content{
+    display: none;
+    padding: 5px 10px 5px 20px;
+}
+
+
+/* Set up Content heading */
+.content-heading{
+    display: inline;
+    color: #303030;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0em;
+    padding: 5px;
+}
+/* Setup paragraph and button container */
+.paragraph-button-container{
+display: flex;
+flex-direction: column;
+}
+/* Setup paragraph description */
+.paragraph-description{
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0em;
+    padding: 5px;
+    color: #616161;
+}
+
+/* Learn more button */
+.learn-more-button{
+color: #005BD3;
+font-size: 13px;
+font-weight: 500;
+line-height: 18px;
+letter-spacing: 0em;
+text-decoration: none;
+
+}
+.learn-more-button:focus{
+    box-shadow: 0px 0px 0px 3px rgba(0, 91, 211, 1);
+    outline: none;
+    border-radius: 3px;
+}
+/* Customise theme button container */
+.customise-theme-container{
+    margin: 10px 5px;
+  
+}
+
+    /* Product button container */
+    .product-button-container{
+display: flex;
+flex-direction: row;
+margin: 10px 5px;
+    }
+    /*Customise theme button, Add product button */
+    .black-button{
+        cursor: pointer;
+        height: 28px;
+        border-radius: 6px;
+        background-color: #404040;
+        border-style: solid;
+        border-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 1),0px 0px 0px 1.5px rgba(51, 51, 51, 1),  0px 1px 0px 1.5px rgba(51, 51, 51, 1) ;
+        padding: 3px 10px 5px 10px;   
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 16px;
+        letter-spacing: 0em;
+        color: #F6F3F6;
+        margin: 0 15px 0 0;
+    }
+
+    /*  button hover */
+    .black-button:hover{
+        background-color: 
+        #2A2A2A;
+        box-shadow: 0px 0px 0px 1.5px rgba(51, 51, 51, 1) ,  0px 1px 0px 1.5px rgba(51, 51, 51, 1), 0px 2px 0px 0px rgba(0, 0, 0, 1);
+    border-color: rgba(255, 255, 255, 0.2);
+    }
+    /*  button focused*/
+    .black-button:focus{
+        box-shadow: 0px 0px 0px 2px rgba(0, 91, 211, 1);
+        border-color: rgba(255, 255, 255, 0.2);
+        outline: none;
+        
+    }
+    /*  button pressed*/
+    .black-button:active{
+        background-color:  #2B2B2B;
+        box-shadow: 0px 3px 0px 0px #000000 inset;
+    }
+    /* Import Product button */
+    .import-product-button{
+        cursor: pointer;
+        height: 28px;
+        border-radius: 6px;
+       font-size: 12px;
+        font-weight: 600;
+        line-height: 16px;
+        letter-spacing: 0em;
+        border: none;
+        color: rgba(50, 50, 50, 1);
+padding: 6px 12px 6px 12px;
+      background-color: #FFFFFF;
+    }
+    /* Import Product button hover */
+    .import-product-button:hover{
+        background-color: rgba(231, 231, 231, 1);
+        
+    }
+    /* Import Product button focus */
+    .import-product-button:focus{
+      outline: none;
+      box-shadow: 0px 0px 0px 2px rgba(0, 91, 211, 1);
+
+    }
+    /* Import Product button pressed */
+    .import-product-button:active{
+        background-color:rgba(224, 224, 224, 1);
+        
+        
+    }
+
+/* Setup Image Container */
+.image-container{
+    display: none;
+}
+/* Main Media Queries */
+@media screen and (min-width: 300px){
+   .menu {
+        position: absolute;
+        top: 55px;
+        right: -5px;
+        display: none; }
+
+       
+}
+
+@media screen and (min-width: 800px){
+    #selectPlanContent{
+        width: 800px;
+        height: 50px;
+        border-radius: 8px;
+    }
+    .trial-selectplan-container{
+        display: flex;
+        flex-direction: row;
+       justify-content: space-between;
+       align-items: center;
+    }
+    .select-plan-container{
+        margin-left: 260px;
+        padding-bottom: 5px;
+    }
+    .delete-button-container{
+        padding: 5px 5px 5px 0;
+        }
+        #setupGuideContent{
+            margin-top: 55px; 
+            width: 800px;
+                 background-color: #FFFFFF;
+                 border: 1px solid #dbdbdb ;
+                 border-radius: 18px;
+         }
+    
+        .content-container{
+            position: relative;
+            width: 790px;
+            height: 100%;
+            border-radius: 10px;
+            padding: 5px;
+            margin: 5px;
+         }
+         .paragraph-container{
+            width: 480px;
+         }
+         .image-container{
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 600px;
+         } 
+          /* Customise Image */
+        .customise-image{
+width: 150px;
+height: 120px;
+        }
+      
+}
+@media screen and (min-width: 850px){
+    .alert-container{
+        position: absolute;
+        top: 55px;
+        right: -150px;
+        display: none;
+          }
+
+}
+
+@media screen and (min-width: 450px) and (max-width: 790px){
+    .delete-button-container{
+        padding: 5px 5px 5px 200px;
+        }
+        .alert-container{
+            position: absolute;
+            top: 55px;
+            right: -40px;
+            display: none;
+              }
+}
+@media screen and  (max-width: 800px) and (min-width: 700px) {
+   #selectPlanContent{
+        width: 700px;
+        height: 50px;
+        border-radius: 8px;
+    }
+    .trial-selectplan-container{
+        display: flex;
+        flex-direction: row;
+       justify-content: space-between;
+       align-items: center;
+    }
+    .select-plan-container{
+        margin-left: 150px;
+        padding-bottom: 5px;
+    }
+    .delete-button-container{
+        padding: 5px 5px 5px 0;
+        }
+
+        #setupGuideContent{
+            margin-top: 55px; 
+            width: 700px;
+                 background-color: #FFFFFF;
+                 border: 1px solid #dbdbdb ;
+                 border-radius: 18px;
+         }
+         
+}
